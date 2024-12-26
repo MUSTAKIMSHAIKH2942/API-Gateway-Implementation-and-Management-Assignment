@@ -1,5 +1,4 @@
 # API Gateway Implementation and Management
-# API Gateway Documentation
 
 This project implements an API Gateway with JWT authentication, role-based access control, rate limiting, load balancing, caching, and security features. It serves as a middleware layer to manage requests to multiple backend services.
 
@@ -21,15 +20,31 @@ This project implements an API Gateway with JWT authentication, role-based acces
   - [POST /api/admin](#3-post-apiadmin)
 - [How to Test the API](#how-to-test-the-api)
 
-## Install Dependencies
+## Overview
 
-Run the following command to install all necessary dependencies:
+The **API Gateway** is a middleware layer that integrates multiple backend services. It provides various features like authentication, rate limiting, load balancing, and caching to ensure secure and efficient request handling.
 
-```bash
-npm install
+## Technologies Used
+
+- **Node.js** - Backend framework.
+- **Express.js** - Web framework for Node.js.
+- **JWT (JSON Web Tokens)** - Authentication mechanism.
+- **express-rate-limit** - Rate limiting middleware.
+- **node-cache** - In-memory caching.
+- **helmet** - Security middleware.
+- **dotenv** - Load environment variables from `.env` file.
+
+## Installation
+
+### Install Dependencies
+
+To get started, clone the repository and install the necessary dependencies by running the following command:
+
+  
+  npm install
 
 ## Objective
-
+  
 The goal of this project is to implement an API Gateway with various essential features including authentication, authorization, rate limiting, routing, load balancing, caching, security, and request/response transformation. This API Gateway forwards requests to backend services and ensures scalability, availability, and security.
 
 ## Features Implemented
