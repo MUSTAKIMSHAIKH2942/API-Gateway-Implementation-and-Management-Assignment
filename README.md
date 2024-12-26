@@ -71,11 +71,10 @@ The goal of this project is to implement an API Gateway with various essential f
    
 ### Install dependencies:
 Run the following command to install all necessary dependencies:
-
-      
-    ```bash
+   
+       ```bash
       npm install
-
+s
 
 ## Set environment variables:
 Create a .env file in the root of the project and add the following variables:
