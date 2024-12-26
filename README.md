@@ -38,7 +38,7 @@ Run the following command to install all necessary dependencies:
    npm install
    Set environment variables:
 
-Create a .env file in the root of the project and add the following variables:
+### Create a .env file in the root of the project and add the following variables:
 
    ```bash
    PORT=3000
