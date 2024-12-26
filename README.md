@@ -34,14 +34,6 @@ The **API Gateway** is a middleware layer that integrates multiple backend servi
 - **helmet** - Security middleware.
 - **dotenv** - Load environment variables from `.env` file.
 
-## Installation
-
-### Install Dependencies
-
-To get started, clone the repository and install the necessary dependencies by running the following command:
-
-  
-  npm install
 
 ## Objective
   
@@ -86,10 +78,10 @@ Run the following command to install all necessary dependencies:
 
 ## Set environment variables:
 Create a .env file in the root of the project and add the following variables:
-
-   PORT=3000
-   JWT_SECRET=  your_secret_key
-   BACKEND_SERVERS=http://localhost:4000,http://localhost:4001
+      ```bash
+     PORT=3000
+     JWT_SECRET=  your_secret_key
+     BACKEND_SERVERS=http://localhost:4000,http://localhost:4001
 
 
 Replace your_secret_key with a secure JWT secret key. The BACKEND_SERVERS variable should contain the URLs of your backend services.
@@ -97,7 +89,11 @@ Replace your_secret_key with a secure JWT secret key. The BACKEND_SERVERS variab
 ### Start the API Gateway:
 
 Run the following command to start the API Gateway:
+    ```bash
    npm start
+   or
+   node server.js
+   
 The API Gateway will be running on port 3000 by default. You can change the port by modifying the .env file.
 
 ### Features Explained
@@ -126,16 +122,17 @@ HTTPS: While HTTPS is not enforced in this local setup, it is recommended to use
 1. POST /api/login
 Description: Authenticates a user and returns a JWT token.
 Request body:
-
-{
-  "username": "user1",
-  "role": "Admin"
-}
+   
+  ```bash
+  {
+    "username": "user1",
+    "role": "Admin"
+  }
 Response:
-
-   {
-     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluX3VzZXIiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MzUxOTUyOTcsImV4cCI6MTczNTE5ODg5N30.bOz_-VITq1Rt48Ew5h3IOnGMGvCnNZOR3kBw2bUagbQ"
-   }
+  ```bash
+     {
+       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluX3VzZXIiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MzUxOTUyOTcsImV4cCI6MTczNTE5ODg5N30.bOz_-VITq1Rt48Ew5h3IOnGMGvCnNZOR3kBw2bUagbQ"
+     }
 
 2. GET /api/data
 Description: Fetches data from a backend server. Caches the response for subsequent requests.
