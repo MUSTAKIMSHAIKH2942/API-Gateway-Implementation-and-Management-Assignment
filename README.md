@@ -174,6 +174,8 @@ Description: A route only accessible to users with the Admin role.
 Headers: Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluX3VzZXIiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MzUxOTUyOTcsImV4cCI6MTczNTE5ODg5N30.bOz_-VITq1Rt48Ew5h3IOnGMGvCnNZOR3kBw2bUagbQ
 
    Response:
+
+   
             ```bash
            {
              "message": "Admin route accessed successfully"
