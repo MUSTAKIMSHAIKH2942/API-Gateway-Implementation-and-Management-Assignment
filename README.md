@@ -72,16 +72,16 @@ The goal of this project is to implement an API Gateway with various essential f
 ### Install dependencies:
 Run the following command to install all necessary dependencies:
    
-       ```bash
-      npm install
-s
+        ```bash
+        npm install
+
 
 ## Set environment variables:
 Create a .env file in the root of the project and add the following variables:
-      ```bash
-     PORT=3000
-     JWT_SECRET=  your_secret_key
-     BACKEND_SERVERS=http://localhost:4000,http://localhost:4001
+        ```bash
+        PORT=3000
+        JWT_SECRET=  your_secret_key
+        BACKEND_SERVERS=http://localhost:4000,http://localhost:4001
 
 
 Replace your_secret_key with a secure JWT secret key. The BACKEND_SERVERS variable should contain the URLs of your backend services.
@@ -89,10 +89,10 @@ Replace your_secret_key with a secure JWT secret key. The BACKEND_SERVERS variab
 ### Start the API Gateway:
 
 Run the following command to start the API Gateway:
-    ```bash
-     npm start
-     or
-     node server.js
+      ```bash
+       npm start
+       or
+       node server.js
      
 The API Gateway will be running on port 3000 by default. You can change the port by modifying the .env file.
 
@@ -131,10 +131,12 @@ Request body:
       }
 
 Response:
-      ```bash
-         {
-           "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluX3VzZXIiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MzUxOTUyOTcsImV4cCI6MTczNTE5ODg5N30.bOz_-VITq1Rt48Ew5h3IOnGMGvCnNZOR3kBw2bUagbQ"
-         }
+        ```bash
+           {
+             "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluX3VzZXIiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MzUxOTUyOTcsImV4cCI6MTczNTE5ODg5N30.bOz_-VITq1Rt48Ew5h3IOnGMGvCnNZOR3kBw2bUagbQ"
+           }
+
+         
 
 ![Login Auth](https://github.com/MUSTAKIMSHAIKH2942/API-Gateway-Implementation-and-Management-Assignment/blob/main/loginuser.png)
          
@@ -167,6 +169,9 @@ Response: Data from the backend service.
            }
          ]
        }
+
+
+
        
 ![Get data Auth](https://github.com/MUSTAKIMSHAIKH2942/API-Gateway-Implementation-and-Management-Assignment/blob/main/apidata.png)
     
@@ -181,6 +186,10 @@ Headers: Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFt
            {
              "message": "Admin route accessed successfully"
            }
+
+
+
+   
 ![Get Admin Auth](https://github.com/MUSTAKIMSHAIKH2942/API-Gateway-Implementation-and-Management-Assignment/blob/main/adminrout.png)
    
 How to Test the API
