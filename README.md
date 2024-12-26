@@ -73,7 +73,7 @@ The goal of this project is to implement an API Gateway with various essential f
 Run the following command to install all necessary dependencies:
 
       
-       ```bash
+    ```bash
       npm install
 
 
