@@ -78,6 +78,8 @@ Run the following command to install all necessary dependencies:
 
 ## Set environment variables:
 Create a .env file in the root of the project and add the following variables:
+
+
         ```bash
         PORT=3000
         JWT_SECRET=  your_secret_key
@@ -89,6 +91,8 @@ Replace your_secret_key with a secure JWT secret key. The BACKEND_SERVERS variab
 ### Start the API Gateway:
 
 Run the following command to start the API Gateway:
+
+
       ```bash
        npm start
        or
@@ -123,6 +127,7 @@ HTTPS: While HTTPS is not enforced in this local setup, it is recommended to use
 1. POST /api/login
 Description: Authenticates a user and returns a JWT token.
 Request body:
+
    
       ```bash
       {
@@ -130,11 +135,15 @@ Request body:
         "role": "Admin"
       }
 
+
 Response:
+
+
         ```bash
            {
              "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluX3VzZXIiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MzUxOTUyOTcsImV4cCI6MTczNTE5ODg5N30.bOz_-VITq1Rt48Ew5h3IOnGMGvCnNZOR3kBw2bUagbQ"
            }
+
 
          
 
@@ -147,6 +156,7 @@ Headers: Authorization: Bearer <JWT_TOKEN>
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluX3VzZXIiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MzUxOTUyOTcsImV4cCI6MTczNTE5ODg5N30.bOz_-VITq1Rt48Ew5h3IOnGMGvCnNZOR3kBw2bUagbQ
 Content-Type: application/json
 Response: Data from the backend service.
+
 
        ```bash
        {
@@ -174,6 +184,7 @@ Response: Data from the backend service.
 
        
 ![Get data Auth](https://github.com/MUSTAKIMSHAIKH2942/API-Gateway-Implementation-and-Management-Assignment/blob/main/apidata.png)
+
     
 3. POST /api/admin
 Description: A route only accessible to users with the Admin role.
@@ -181,7 +192,8 @@ Headers: Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFt
 
    Response:
 
-   
+
+
             ```bash
            {
              "message": "Admin route accessed successfully"
@@ -191,6 +203,9 @@ Headers: Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFt
 
    
 ![Get Admin Auth](https://github.com/MUSTAKIMSHAIKH2942/API-Gateway-Implementation-and-Management-Assignment/blob/main/adminrout.png)
+
+
+
    
 How to Test the API
 Login: Make a POST request to /api/login with a valid username and role to obtain a JWT token.                                                          
