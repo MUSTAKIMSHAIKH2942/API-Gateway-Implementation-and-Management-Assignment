@@ -1,4 +1,32 @@
 # API Gateway Implementation and Management
+# API Gateway Documentation
+
+This project implements an API Gateway with JWT authentication, role-based access control, rate limiting, load balancing, caching, and security features. It serves as a middleware layer to manage requests to multiple backend services.
+
+## Table of Contents
+
+- [Install Dependencies](#install-dependencies)
+- [Set Environment Variables](#set-environment-variables)
+- [Start the API Gateway](#start-the-api-gateway)
+- [Features Explained](#features-explained)
+  - [Authentication and Authorization](#authentication-and-authorization)
+  - [Rate Limiting](#rate-limiting)
+  - [Routing and Load Balancing](#routing-and-load-balancing)
+  - [Caching](#caching)
+  - [Request/Response Transformation](#requestresponse-transformation)
+  - [Security](#security)
+- [API Endpoints](#api-endpoints)
+  - [POST /api/login](#1-post-apilogin)
+  - [GET /api/data](#2-get-apidata)
+  - [POST /api/admin](#3-post-apiadmin)
+- [How to Test the API](#how-to-test-the-api)
+
+## Install Dependencies
+
+Run the following command to install all necessary dependencies:
+
+```bash
+npm install
 
 ## Objective
 
@@ -33,12 +61,12 @@ The goal of this project is to implement an API Gateway with various essential f
    
 ### Install dependencies:
 Run the following command to install all necessary dependencies:
-
    ```bash
-   npm install
-   Set environment variables:
+    npm install
 
-### Create a .env file in the root of the project and add the following variables:
+
+## Set environment variables:
+Create a .env file in the root of the project and add the following variables:
 
    ```bash
    PORT=3000
