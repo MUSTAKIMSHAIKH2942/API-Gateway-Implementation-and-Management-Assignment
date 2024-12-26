@@ -1,1 +1,113 @@
-# API-Gateway-Implementation-and-Management-Assignment
+# API Gateway Implementation and Management
+
+## Objective
+
+The goal of this project is to implement an API Gateway with various essential features including authentication, authorization, rate limiting, routing, load balancing, caching, security, and request/response transformation. This API Gateway forwards requests to backend services and ensures scalability, availability, and security.
+
+## Features Implemented
+
+- **Authentication and Authorization**: JWT-based authentication and Role-Based Access Control (RBAC) to manage user roles and permissions.
+- **Rate Limiting**: Limits the number of requests per IP to prevent abuse.
+- **Routing and Load Balancing**: Routes API requests to appropriate backend services and simulates load balancing.
+- **Request/Response Transformation**: Modifies headers and payloads for better management and readability.
+- **Caching**: Caches responses to improve performance for frequent requests.
+- **Security**: Ensures API security through best practices such as using `helmet` for securing headers.
+
+## Folder Structure
+![File structure](https://github.com/MUSTAKIMSHAIKH2942/API-Gateway-Implementation-and-Management-Assignment/blob/main/testapigateway.png)
+
+
+## Setup Instructions
+### Prerequisites
+
+- Node.js installed (version 14.x or higher)
+- A cloud environment (e.g., AWS, GCP, or Azure) for deployment (optional for local setup)
+
+### Steps
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/yourusername/api-gateway.git
+   cd api-gateway
+Install dependencies:
+
+Run the following command to install all necessary dependencies:
+
+bash
+Copy code
+npm install
+Set environment variables:
+
+Create a .env file in the root of the project and add the following variables:
+
+env
+Copy code
+PORT=3000
+JWT_SECRET=your_secret_key
+BACKEND_SERVERS=http://localhost:4000,http://localhost:4001
+Replace your_secret_key with a secure JWT secret key. The BACKEND_SERVERS variable should contain the URLs of your backend services.
+
+Start the API Gateway:
+
+Run the following command to start the API Gateway:
+
+bash
+Copy code
+npm start
+The API Gateway will be running on port 3000 by default. You can change the port by modifying the .env file.
+
+Features Explained
+1. Authentication and Authorization
+JWT Authentication: The API Gateway uses JWT tokens for authenticating users. The authenticateToken middleware checks the token provided in the Authorization header of each request.
+
+Role-Based Access Control (RBAC): The authorizeRole middleware restricts access to specific routes based on the user's role. For example, only Admin and Editor roles can access the /data route.
+
+2. Rate Limiting
+The API Gateway uses the express-rate-limit library to limit the number of requests an IP can make within a defined time window (15 minutes). The default configuration allows a maximum of 100 requests per 15 minutes.
+3. Routing and Load Balancing
+Routing: The API Gateway forwards incoming requests to appropriate backend services based on the routes defined in apiRoutes.js.
+
+Load Balancing: A simple round-robin load balancer is used to distribute requests to multiple backend servers defined in the .env file.
+
+4. Caching
+The API Gateway caches responses from the backend servers for 1 minute using the node-cache library. This helps reduce load on the backend and improves response time for frequently requested data.
+5. Request/Response Transformation
+The transformRequestResponse middleware modifies incoming request headers and outgoing response headers. For example, it adds the x-forwarded-for header to the request and sets x-powered-by in the response.
+6. Security
+Helmet: The helmet middleware is used to secure HTTP headers and prevent common security vulnerabilities such as XSS and clickjacking.
+HTTPS: While HTTPS is not enforced in this local setup, it is recommended to use HTTPS in a production environment for secure communication.
+API Endpoints
+1. POST /api/login
+Description: Authenticates a user and returns a JWT token.
+Request body:
+json
+Copy code
+{
+  "username": "user1",
+  "role": "Admin"
+}
+Response:
+json
+Copy code
+{
+  "token": "your_jwt_token"
+}
+2. GET /api/data
+Description: Fetches data from a backend server. Caches the response for subsequent requests.
+Headers: Authorization: Bearer <JWT_TOKEN>
+Response: Data from the backend service.
+3. POST /api/admin
+Description: A route only accessible to users with the Admin role.
+Headers: Authorization: Bearer <JWT_TOKEN>
+Response:
+json
+Copy code
+{
+  "message": "Admin route accessed successfully"
+}
+How to Test the API
+Login: Make a POST request to /api/login with a valid username and role to obtain a JWT token.
+Access Protected Routes: Use the JWT token to make GET and POST requests to /api/data and /api/admin. Ensure your role is authorized for each route.
+Check Rate Limiting: Test rate limiting by making more than 100 requests in 15 minutes. You should receive a Too many requests message.
+Check Caching: Make a GET request to /api/data and check if the response is cached by making the same request again within 1 minute.
