@@ -171,15 +171,19 @@ Response: Data from the backend service.
 
 3. POST /api/admin
 Description: A route only accessible to users with the Admin role.
-Headers: Authorization: Bearer <JWT_TOKEN>
-Response:
-        ```bash
-       {
-         "message": "Admin route accessed successfully"
-       }
+Headers: Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluX3VzZXIiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MzUxOTUyOTcsImV4cCI6MTczNTE5ODg5N30.bOz_-VITq1Rt48Ew5h3IOnGMGvCnNZOR3kBw2bUagbQ
+
+   Response:
+            ```bash
+           {
+             "message": "Admin route accessed successfully"
+           }
 
 How to Test the API
-Login: Make a POST request to /api/login with a valid username and role to obtain a JWT token.
-Access Protected Routes: Use the JWT token to make GET and POST requests to /api/data and /api/admin. Ensure your role is authorized for each route.
-Check Rate Limiting: Test rate limiting by making more than 100 requests in 15 minutes. You should receive a Too many requests message.
-Check Caching: Make a GET request to /api/data and check if the response is cached by making the same request again within 1 minute.
+Login: Make a POST request to /api/login with a valid username and role to obtain a JWT token.                                                          
+Access Protected Routes: Use the JWT token to make GET and POST requests to /api/data and /api/admin. Ensure your role is authorized for each route.                    
+Check Rate Limiting: Test rate limiting by making more than 100 requests in 15 minutes. You should receive a Too many requests message.                                  
+Check Caching: Make a GET request to /api/data and check if the response is cached by making the same request again within 1 minute.                                        
+
+
+
