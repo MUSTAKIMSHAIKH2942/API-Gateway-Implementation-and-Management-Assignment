@@ -56,8 +56,6 @@ The goal of this project is to implement an API Gateway with various essential f
 - **Caching**: Caches responses to improve performance for frequent requests.
 - **Security**: Ensures API security through best practices such as using `helmet` for securing headers.
 
-## Folder Structure
-![File structure](https://github.com/MUSTAKIMSHAIKH2942/API-Gateway-Implementation-and-Management-Assignment/blob/main/testapigateway.png)
 
 
 ## Setup Instructions
@@ -66,6 +64,11 @@ The goal of this project is to implement an API Gateway with various essential f
 - Node.js installed (version 14.x or higher)
 - A cloud environment (e.g., AWS, GCP, or Azure) for deployment (optional for local setup)
 
+
+## Folder Structure
+![File structure](https://github.com/MUSTAKIMSHAIKH2942/API-Gateway-Implementation-and-Management-Assignment/blob/main/testapigateway.png)
+
+ 
 ### Steps
 
 1. **Clone the repository**:
@@ -76,28 +79,26 @@ The goal of this project is to implement an API Gateway with various essential f
    
 ### Install dependencies:
 Run the following command to install all necessary dependencies:
-   ```bash
     npm install
 
 
 ## Set environment variables:
 Create a .env file in the root of the project and add the following variables:
 
-   ```bash
    PORT=3000
    JWT_SECRET=  your_secret_key
    BACKEND_SERVERS=http://localhost:4000,http://localhost:4001
 
+
 Replace your_secret_key with a secure JWT secret key. The BACKEND_SERVERS variable should contain the URLs of your backend services.
 
-Start the API Gateway:
+### Start the API Gateway:
 
 Run the following command to start the API Gateway:
-   ```bash
    npm start
 The API Gateway will be running on port 3000 by default. You can change the port by modifying the .env file.
 
-Features Explained
+### Features Explained
 1. Authentication and Authorization
 JWT Authentication: The API Gateway uses JWT tokens for authenticating users. The authenticateToken middleware checks the token provided in the Authorization header of each request.
 
@@ -118,18 +119,18 @@ The transformRequestResponse middleware modifies incoming request headers and ou
 Helmet: The helmet middleware is used to secure HTTP headers and prevent common security vulnerabilities such as XSS and clickjacking.
 HTTPS: While HTTPS is not enforced in this local setup, it is recommended to use HTTPS in a production environment for secure communication.
 
-API Endpoints
+### API Endpoints
+
 1. POST /api/login
 Description: Authenticates a user and returns a JWT token.
 Request body:
-json
-Copy code
+
 {
   "username": "user1",
   "role": "Admin"
 }
 Response:
-   ```bash
+
    {
      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluX3VzZXIiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MzUxOTUyOTcsImV4cCI6MTczNTE5ODg5N30.bOz_-VITq1Rt48Ew5h3IOnGMGvCnNZOR3kBw2bUagbQ"
    }
@@ -162,6 +163,7 @@ Response: Data from the backend service.
        }
      ]
    }
+   
 
 3. POST /api/admin
 Description: A route only accessible to users with the Admin role.
