@@ -90,11 +90,12 @@ Replace your_secret_key with a secure JWT secret key. The BACKEND_SERVERS variab
 
 Run the following command to start the API Gateway:
     ```bash
-   npm start
-   or
-   node server.js
-   
+     npm start
+     or
+     node server.js
+     
 The API Gateway will be running on port 3000 by default. You can change the port by modifying the .env file.
+
 
 ### Features Explained
 1. Authentication and Authorization
@@ -123,16 +124,20 @@ HTTPS: While HTTPS is not enforced in this local setup, it is recommended to use
 Description: Authenticates a user and returns a JWT token.
 Request body:
    
-  ```bash
-  {
-    "username": "user1",
-    "role": "Admin"
-  }
+      ```bash
+      {
+        "username": "user1",
+        "role": "Admin"
+      }
+
 Response:
-  ```bash
-     {
-       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluX3VzZXIiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MzUxOTUyOTcsImV4cCI6MTczNTE5ODg5N30.bOz_-VITq1Rt48Ew5h3IOnGMGvCnNZOR3kBw2bUagbQ"
-     }
+      ```bash
+         {
+           "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluX3VzZXIiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MzUxOTUyOTcsImV4cCI6MTczNTE5ODg5N30.bOz_-VITq1Rt48Ew5h3IOnGMGvCnNZOR3kBw2bUagbQ"
+         }
+
+
+         
 
 2. GET /api/data
 Description: Fetches data from a backend server. Caches the response for subsequent requests.
@@ -141,37 +146,37 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkb
 Content-Type: application/json
 Response: Data from the backend service.
 
-   ```bash
-   {
-     "message": "This is a test response",
-     "data": [
+       ```bash
        {
-         "id": 1,
-         "name": "Item 1",
-         "description": "This is item 1"
-       },
-       {
-         "id": 2,
-         "name": "Item 2",
-         "description": "This is item 2"
-       },
-       {
-         "id": 3,
-         "name": "Item 3",
-         "description": "This is item 3"
+         "message": "This is a test response",
+         "data": [
+           {
+             "id": 1,
+             "name": "Item 1",
+             "description": "This is item 1"
+           },
+           {
+             "id": 2,
+             "name": "Item 2",
+             "description": "This is item 2"
+           },
+           {
+             "id": 3,
+             "name": "Item 3",
+             "description": "This is item 3"
+           }
+         ]
        }
-     ]
-   }
-   
+       
 
 3. POST /api/admin
 Description: A route only accessible to users with the Admin role.
 Headers: Authorization: Bearer <JWT_TOKEN>
 Response:
-    ```bash
-   {
-     "message": "Admin route accessed successfully"
-   }
+        ```bash
+       {
+         "message": "Admin route accessed successfully"
+       }
 
 How to Test the API
 Login: Make a POST request to /api/login with a valid username and role to obtain a JWT token.
