@@ -34,24 +34,24 @@ The goal of this project is to implement an API Gateway with various essential f
 ### Install dependencies:
 Run the following command to install all necessary dependencies:
 
-```bash
-npm install
-Set environment variables:
+   ```bash
+   npm install
+   Set environment variables:
 
 Create a .env file in the root of the project and add the following variables:
 
-```bash
-PORT=3000
-JWT_SECRET=  your_secret_key
-BACKEND_SERVERS=http://localhost:4000,http://localhost:4001
+   ```bash
+   PORT=3000
+   JWT_SECRET=  your_secret_key
+   BACKEND_SERVERS=http://localhost:4000,http://localhost:4001
 
 Replace your_secret_key with a secure JWT secret key. The BACKEND_SERVERS variable should contain the URLs of your backend services.
 
 Start the API Gateway:
 
 Run the following command to start the API Gateway:
-```bash
-npm start
+   ```bash
+   npm start
 The API Gateway will be running on port 3000 by default. You can change the port by modifying the .env file.
 
 Features Explained
@@ -86,10 +86,10 @@ Copy code
   "role": "Admin"
 }
 Response:
-```bash
-{
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluX3VzZXIiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MzUxOTUyOTcsImV4cCI6MTczNTE5ODg5N30.bOz_-VITq1Rt48Ew5h3IOnGMGvCnNZOR3kBw2bUagbQ"
-}
+   ```bash
+   {
+     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluX3VzZXIiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MzUxOTUyOTcsImV4cCI6MTczNTE5ODg5N30.bOz_-VITq1Rt48Ew5h3IOnGMGvCnNZOR3kBw2bUagbQ"
+   }
 
 2. GET /api/data
 Description: Fetches data from a backend server. Caches the response for subsequent requests.
@@ -98,37 +98,36 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkb
 Content-Type: application/json
 Response: Data from the backend service.
 
-```bash
-{
-  "message": "This is a test response",
-  "data": [
-    {
-      "id": 1,
-      "name": "Item 1",
-      "description": "This is item 1"
-    },
-    {
-      "id": 2,
-      "name": "Item 2",
-      "description": "This is item 2"
-    },
-    {
-      "id": 3,
-      "name": "Item 3",
-      "description": "This is item 3"
-    }
-  ]
-}
+   ```bash
+   {
+     "message": "This is a test response",
+     "data": [
+       {
+         "id": 1,
+         "name": "Item 1",
+         "description": "This is item 1"
+       },
+       {
+         "id": 2,
+         "name": "Item 2",
+         "description": "This is item 2"
+       },
+       {
+         "id": 3,
+         "name": "Item 3",
+         "description": "This is item 3"
+       }
+     ]
+   }
 
 3. POST /api/admin
 Description: A route only accessible to users with the Admin role.
 Headers: Authorization: Bearer <JWT_TOKEN>
 Response:
-json
-Copy code
-{
-  "message": "Admin route accessed successfully"
-}
+    ```bash
+   {
+     "message": "Admin route accessed successfully"
+   }
 
 How to Test the API
 Login: Make a POST request to /api/login with a valid username and role to obtain a JWT token.
