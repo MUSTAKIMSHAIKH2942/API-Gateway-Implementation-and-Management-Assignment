@@ -136,7 +136,7 @@ Response:
            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluX3VzZXIiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MzUxOTUyOTcsImV4cCI6MTczNTE5ODg5N30.bOz_-VITq1Rt48Ew5h3IOnGMGvCnNZOR3kBw2bUagbQ"
          }
 
-
+![Login Auth](https://github.com/MUSTAKIMSHAIKH2942/API-Gateway-Implementation-and-Management-Assignment/blob/main/loginuser.png)
          
 
 2. GET /api/data
@@ -168,7 +168,8 @@ Response: Data from the backend service.
          ]
        }
        
-
+![Get data Auth](https://github.com/MUSTAKIMSHAIKH2942/API-Gateway-Implementation-and-Management-Assignment/blob/main/apidata.png)
+    
 3. POST /api/admin
 Description: A route only accessible to users with the Admin role.
 Headers: Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluX3VzZXIiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MzUxOTUyOTcsImV4cCI6MTczNTE5ODg5N30.bOz_-VITq1Rt48Ew5h3IOnGMGvCnNZOR3kBw2bUagbQ
@@ -180,7 +181,8 @@ Headers: Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFt
            {
              "message": "Admin route accessed successfully"
            }
-
+![Get Admin Auth](https://github.com/MUSTAKIMSHAIKH2942/API-Gateway-Implementation-and-Management-Assignment/blob/main/adminrout.png)
+   
 How to Test the API
 Login: Make a POST request to /api/login with a valid username and role to obtain a JWT token.                                                          
 Access Protected Routes: Use the JWT token to make GET and POST requests to /api/data and /api/admin. Ensure your role is authorized for each route.                    
